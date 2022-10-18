@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert Temperatures</title>
+
+    <style>
+      .container {
+        box-sizing: border-box;
+        border: 1px black solid;
+        height: 300px;
+        width: 450px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      #result {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        Celsius to Fahrenheit (only) : <input type="text" id="celToFah" />
+        <br />
+        <br />
+
+        <input type="button" onclick="cToFah()" value="Fahrenheit" />
+        <br />
+        <br />
+        Fahrenheit to Celsius (only) : <input type="text" id="fahToCel" />
+        <br />
+        <br />
+
+        <input type="button" onclick="fahToC()" value="Celsius" />
+      </form>
+
+      <p>The Result Is :</p>
+
+      <p id="result"></p>
+
+      <p>
+        Note : Please Don't use Celsius to Celsius Or Fahrenheit to Fahrenheit.
+      </p>
+    </div>
+
+    <script>
+      function cToFah() {
+        temp1 = document.getElementById("celToFah").value;
+
+        document.getElementById("result").innerHTML =
+          (temp1 * 9) / 5 + 32 + " F";
+      }
+
+      function fahToC() {
+        temp2 = document.getElementById("fahToCel").value;
+
+        document.getElementById("result").innerHTML =
+          ((temp2 - 32) * 5) / 9 + " C";
+      }
+    </script>
+  </body>
+</html>
